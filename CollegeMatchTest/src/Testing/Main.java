@@ -23,5 +23,7 @@ public class Main {
         System.out.println(filter.getCollegeRecomendations(1.0f, 10, 1435, "West Coast", 1000000000, "French"));
         System.out.println(filter.getCollegeRecomendations(5.0f, 100, 10000, "West Coast", 1000000000, "Computer Science"));
 
+        UserProfile userProfile1 = new UserProfile(1.0f, 10, 1435, "West Coast", 1000000000, "French");
+
     }
 }

@@ -10,6 +10,10 @@ public class SearchBar{
         this.colleges = colleges;
     }
 
+    public ArrayList<College> getCollegeReccomendations(UserProfile profile) {
+        return getCollegeRecomendations(profile.);
+    }
+
     //This function will take parameters for the users GPA,ACT, SAT, desired location, budget, and desired major
     public ArrayList<College> getCollegeRecomendations(float GPA, int ACT, int SAT, String desired_location,int budget,String desired_major){
 
