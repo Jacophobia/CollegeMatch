@@ -83,6 +83,34 @@ public class Firebase {
             ArrayList<String> majors = (ArrayList<String>) collegeDocuments.get(key).get("Majors");
             double PPS = (double) collegeDocuments.get(key).get("PPS"); // price per semester
             String location = (String) collegeDocuments.get(key).get("Location");
+            if (name == null)
+                Log.d("Error Checking", "Name came back as null");
+            else
+                Log.d("Error Checking", "Name came back as" + name);
+            if (GPA == 0.0f)
+                Log.d("Error Checking", "GPA came back as null");
+            else
+                Log.d("Error Checking", "GPA came back as" + GPA);
+            if (ACT == 0)
+                Log.d("Error Checking", "ACT came back as null");
+            else
+                Log.d("Error Checking", "ACT came back as" + ACT);
+            if (SAT == 0)
+                Log.d("Error Checking", "SAT came back as null");
+            else
+                Log.d("Error Checking", "SAT came back as" + SAT);
+            if (majors == null)
+                Log.d("Error Checking", "majors came back as null");
+            else
+                Log.d("Error Checking", "majors came back as" + majors);
+            if (PPS == 0.0)
+                Log.d("Error Checking", "PPS came back as null");
+            else
+                Log.d("Error Checking", "PPS came back as" + PPS);
+            if (location == null)
+                Log.d("Error Checking", "Location came back as null");
+            else
+                Log.d("Error Checking", "Location came back as" + location);
             nextCollege = new College(name, GPA, ACT, SAT, majors, PPS, location);
             colleges.add(nextCollege);
         }
