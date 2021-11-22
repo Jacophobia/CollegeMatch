@@ -25,7 +25,5 @@ public class Main {
 
         UserProfile userProfile1 = new UserProfile(1.0f, 10, 1435, "West Coast", 1000000000, "French");
 
-        UserProfile userProfile1 = new UserProfile(1.0f, 10, 1435, "West Coast", 1000000000, "French");
-
     }
 }
