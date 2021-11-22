@@ -1,4 +1,4 @@
-package Testing;
+package com.example.collegematch;
 
 public class UserProfile {
     float GPA;

@@ -20,8 +20,10 @@ public class Main {
         colleges.add(college2);
 
         SearchBar filter = new SearchBar(colleges);
-        System.out.println(filter.getCollegeRecomendations(1.0f, 10, 1435, "West Coast", 1000000000, "French"));
-        System.out.println(filter.getCollegeRecomendations(5.0f, 100, 10000, "West Coast", 1000000000, "Computer Science"));
+        System.out.println(filter.getCollegeRecomendations(4.0f, 36, 1435, "West Coast", 1000000000, "French"));
+        System.out.println(filter.getCollegeRecomendations(5.0f, 36, 1435, "West Coast", 1000000000, "Computer Science"));
+
+        UserProfile userProfile1 = new UserProfile(1.0f, 10, 1435, "West Coast", 1000000000, "French");
 
         UserProfile userProfile1 = new UserProfile(1.0f, 10, 1435, "West Coast", 1000000000, "French");
 
