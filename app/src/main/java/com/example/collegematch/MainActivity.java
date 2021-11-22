@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         Firebase firebase = new Firebase();
-        firebase.getCollegeDocuments();
+        Log.d("Colleges:", "" + firebase.getCollegeDocuments());
     }
 
     @Override

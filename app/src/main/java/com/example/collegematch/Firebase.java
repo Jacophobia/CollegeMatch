@@ -42,7 +42,7 @@ public class Firebase {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Log.d("College Match", "DocumentSnapshot data: " + key +  ": " + document.getData());
+                        // Log.d("College Match", "DocumentSnapshot data: " + key +  ": " + document.getData());
                         // Add documents to the collegeDocuments HashMap
                         collegeDocuments.put(key, document.getData());
                     } else {
