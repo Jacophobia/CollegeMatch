@@ -17,11 +17,11 @@ public class DataFormatter {
         return colleges.get(index).getGPA();
     }
 
-    public int getCollegeACT(int index) {
+    public long getCollegeACT(int index) {
         return colleges.get(index).getACT();
     }
 
-    public int getCollegeSAT(int index) {
+    public long getCollegeSAT(int index) {
         return colleges.get(index).getSAT();
     }
 

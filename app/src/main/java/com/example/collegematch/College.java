@@ -6,14 +6,14 @@ import java.util.ArrayList;
 public class College {
     String name;
     float GPA;
-    int ACT;
-    int SAT;
+    long ACT;
+    long SAT;
     ArrayList<String> majors;
     double PPS; // price per semester
     String location;
 
     public College(
-            String name, float GPA, int ACT, int SAT,
+            String name, float GPA, long ACT, long SAT,
             ArrayList<String> majors, double PPS, String location
         ) {
         this.name = name;
@@ -33,11 +33,11 @@ public class College {
         return GPA;
     }
 
-    public int getACT() {
+    public long getACT() {
         return ACT;
     }
 
-    public int getSAT() {
+    public long getSAT() {
         return SAT;
     }
 
