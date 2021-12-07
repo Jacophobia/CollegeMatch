@@ -36,13 +36,8 @@ public class ResultsActivity extends AppCompatActivity {
         System.out.println(price);
         System.out.println(location);
 
-
-
-
         TextView gpa_view = findViewById(R.id.gpa_view);
         gpa_view.setText(Float.toString(gpa));
-
-
 
     }
 }
