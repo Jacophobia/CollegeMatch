@@ -1,10 +1,13 @@
 package com.example.collegematch;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
@@ -40,12 +43,65 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println(firebase.getCollegeList());
+
+                // Check for missing inputs
+                try {
+                    // Collect Inputs
+                    EditText gpa_inputView = findViewById(R.id.gpa_input);
+                    float gpa = Float.parseFloat(gpa_inputView.getText().toString());
+
+                    EditText act_inputView = findViewById(R.id.act_input);
+                    int act = Integer.parseInt(act_inputView.getText().toString());
+
+                    EditText sat_inputView = findViewById(R.id.sat_input);
+                    int sat = Integer.parseInt(sat_inputView.getText().toString());
+
+                    EditText major_inputView = findViewById(R.id.major_input);
+                    String major = major_inputView.getText().toString();
+
+                    EditText price_inputView = findViewById(R.id.price_input);
+                    int price = Integer.parseInt(price_inputView.getText().toString());
+
+                    EditText location_inputView = findViewById(R.id.location_input);
+                    String location = location_inputView.getText().toString();
+
+                    UserProfile newUser = new UserProfile(gpa, act, sat, location, price, major);
+
+                    // Create UserProfile or show error
+                    //                try {
+                    Bundle bundle = new Bundle();
+                    System.out.println("Created a bundle");
+                    bundle.putFloat("gpa", gpa);
+                    System.out.println(gpa);
+                    System.out.println("Added gpa");
+                    bundle.putInt("act", act);
+                    System.out.println("added act");
+                    bundle.putInt("sat", sat);
+                    System.out.println("added sat");
+                    bundle.putString("major", major);
+                    System.out.println("added major");
+                    bundle.putInt("price", price);
+                    System.out.println("added price");
+                    bundle.putString("location", location);
+                    System.out.println("added location");
+
+                    // Move to results screen
+                    Intent i = new Intent(MainActivity.this, ResultsActivity.class);
+                    i.putExtras(bundle);
+                    startActivity(i);
+
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(),"All inputs must be filled",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
 
     private void onSubmit() {
         System.out.println(firebase.getCollegeList());
+
+
     }
 
     @Override
