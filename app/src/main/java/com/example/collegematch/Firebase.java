@@ -15,9 +15,7 @@ public class Firebase {
     private ArrayList<College> colleges = new ArrayList<>();
 
     public Firebase() {
-        System.out.println("Beginning Firebase Query");
         readFirestoreDocuments();
-        System.out.println("Firebase Query Complete");
     }
 
     private void readFirestoreDocuments() {
