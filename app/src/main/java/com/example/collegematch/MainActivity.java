@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-    private Firebase firebase = new Firebase();
+    public static Firebase firebase = new Firebase();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +35,22 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         View submit_button = findViewById(R.id.submit_button); // FIXME: This just keeps returning null for some reason
-        System.out.println(submit_button);
-        submit_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println(firebase.getCollegeList());
+        submit_button.setOnClickListener(view -> {
+            UserProfile testUser = null;
+            try {
+                testUser = new UserProfile(4.0f, 36, 1600, "East", 1000000, "Engineering");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            DataFormatter colleges;
+            if (testUser != null) {
+                colleges = new DataFormatter(testUser);
+                for (int i = 0; i < colleges.size(); i++) {
+                    System.out.println(colleges.getCollegeName(i));
+                }
             }
         });
+
     }
 
     private void onSubmit() {

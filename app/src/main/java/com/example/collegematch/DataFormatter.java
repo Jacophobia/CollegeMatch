@@ -5,8 +5,11 @@ import java.util.ArrayList;
 
 public class DataFormatter {
     ArrayList<College> colleges;
-    DataFormatter(ArrayList<College> colleges) {
-        this.colleges = colleges;
+    DataSorter sorter;
+
+    DataFormatter(UserProfile userProfile) {
+        sorter = new DataSorter();
+        this.colleges = sorter.getCollegeReccomendations(userProfile);
     }
 
     public String getCollegeName(int index) {
