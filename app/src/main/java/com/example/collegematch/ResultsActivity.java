@@ -24,17 +24,18 @@ public class ResultsActivity extends AppCompatActivity {
 
         try {
             UserProfile newUser = new UserProfile(gpa, act, sat, location, price, major);
+            DataFormatter colleges;
+            colleges = new DataFormatter(newUser);
+            for (int i = 0; i < colleges.size(); i++) {
+                System.out.println(colleges.getCollegeName(i));
+            }
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
             finish();
         }
 
-        System.out.println(act);
-        System.out.println(sat);
-        System.out.println(major);
-        System.out.println(price);
-        System.out.println(location);
+
 
 
 

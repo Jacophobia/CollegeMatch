@@ -22,19 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-    private Firebase firebase = new Firebase();
+    public static Firebase firebase = new Firebase();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-//        val f_to_c = findViewById<Button>(R.id.f_to_c)
-//        val c_to_f = findViewById<Button>(R.id.c_to_f)
-//
-//        f_to_c.setOnClickListener { convert_f_to_c() }
-//        c_to_f.setOnClickListener { convert_c_to_f() }
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         View submit_button = findViewById(R.id.submit_button); // FIXME: This just keeps returning null for some reason
@@ -93,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(),"All inputs must be filled",Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
+
     }
 
     private void onSubmit() {
