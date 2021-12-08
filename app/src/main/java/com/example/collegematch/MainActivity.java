@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(i);
 
                 } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(),"All inputs must be filled",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
             }
         });

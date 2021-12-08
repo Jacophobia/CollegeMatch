@@ -32,13 +32,22 @@ public class ResultsActivity extends AppCompatActivity {
         int price = bundle.getInt("price");
         String location = bundle.getString("location").toString();
 
+        // Get college list view
+        TextView collegeListView = findViewById(R.id.college_list_view);
+        String collegeList = "";
+
         try {
             UserProfile newUser = new UserProfile(gpa, act, sat, location, price, major);
             DataFormatter colleges;
             colleges = new DataFormatter(newUser);
+
             for (int i = 0; i < colleges.size(); i++) {
                 System.out.println(colleges.getCollegeName(i));
+                collegeList += colleges.getCollegeName(i);
+                collegeList += "\n";
+
             }
+            collegeListView.setText(collegeList);
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
@@ -50,8 +59,8 @@ public class ResultsActivity extends AppCompatActivity {
 
 
 
-        TextView gpa_view = findViewById(R.id.gpa_view);
-        gpa_view.setText(Float.toString(gpa));
+//        TextView gpa_view = findViewById(R.id.gpa_view);
+//        gpa_view.setText(Float.toString(gpa));
 
 
 

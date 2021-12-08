@@ -20,10 +20,10 @@ public class DataSorter {
 // DataRetriever firebase = new DataRetriever();
 // ArrayList<College> colleges_to_recommend = firebase.getCollegeList();
 
-        ArrayList<College> colleges_to_recommend = firebase.getCollegeList();
+        ArrayList<College> colleges_to_recommend = (ArrayList<College>) firebase.getCollegeList().clone();
         // TODO: Change this so it gets college objects
         // need to know the syntax for getting the list of colleges
-        // we will have an arrayList called colleges_to_reccomend of objects called college.
+        // we will have an arrayList called colleges_to_recommend of objects called college.
         // removes colleges with .5 higher GPA than the user
         for (int i = colleges_to_recommend.size() - 1; i >= 0; i--) {
             if (colleges_to_recommend.get(i).getGPA() > (GPA + .3))
